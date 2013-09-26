@@ -78,9 +78,9 @@ function deleteCommentById(req, res) {
 function updateCommentById(req, res) {
 	var id = req.params.id;
 	var newData = {
-		author: req.body.name,
+		author: req.body.author,
 		message: req.body.message,
-		upvotes: req.body.upvote
+		upvotes: req.body.upvotes
 	};
 	Comment.findByIdAndUpdate(id, newData, function (err, doc) {
 		if (err) {
