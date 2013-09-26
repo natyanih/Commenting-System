@@ -113,19 +113,15 @@
 				upvotes: incUpvote
 			}
 
-			if (!this.model.attrChanged(newAttrs)) {
-				this.showDefaultView();
-			} else {
-				this.model.save(newAttrs, {
-					wait: true,
-					success: function (model, resp, opt) {
-						console.log('model update success: ', model);
-					},
-					error: function (model, xhr, opt) {
-						console.log('model update error: ', model);
-					}
-				});
-			}
+			this.model.save(newAttrs, {
+				wait: true,
+				success: function (model, resp, opt) {
+					console.log('model update success: ', model);
+				},
+				error: function (model, xhr, opt) {
+					console.log('model update error: ', model);
+				}
+			});
 		},
 
 		showDefaultView: function () {
